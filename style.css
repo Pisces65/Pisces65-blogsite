@@ -1,40 +1,98 @@
+@font-face {
+    font-family:notosanshans;
+    src:url("public/fonts/SourceHanSansCN-VF.ttf");
+}
 body{
     margin: 0px;
     padding: 0px;
     display: grid;
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 1fr minmax(600px,10fr) 1fr;
+    font-family: notosanshans;
 }
 .nav{
-    color: white;
-    background-color: darkblue;
-    border: #000 solid;
-    display: inline-flex;
-    justify-content: space-between;
+    height: 15vh;
+    min-height: 65px;
+    background-color: #004e66;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-}
-.navlist{
-    list-style: none;
-}
-.navlist > li {
-    display: inline-block;
-    margin: 0 5px;
-    padding: 0px 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.navlist > li > a{
+.nav > img{
+    height: 9vh;
+    min-height: 39px;
+    width: auto;
+    border: 1.5px dotted white;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+li > img{
+    opacity: 0;
+    width: 25px;
+    height: auto;
+    transform:translateY(-10px);
+    transition: all 0.3s ease 0s
+}
+
+.navlist{
+    list-style: none;
+    display: inline-flex;
+    position: relative;
+    padding: 0;
+}
+.navlist a{
     color: white;
     transition: all 0.3s ease 0s;
     text-decoration: none;
+    line-height: 35px;
+    font-size: 18px;
+}
+.navlist a:hover{
+    color: #fcbe32;
+} 
+.navlist > li {
+    display: inline-flex;
+    padding: 0 15px;
+}
+.navlist > li:hover > ul {
+    display: flex;
+}
+.navlist > li:hover > img {
+    opacity: 1;
+    transform:translateY(0);
+}
+.second-navlist{
+    list-style: none;
+    position: absolute;
+    margin-top: 35px;
+    padding: 0px;
+    width: auto;
+    display: none;
+    flex-direction: column;
+}
+.second-navlist > li{
+    padding: 0 5px;
+    margin: 1px 0;
+    background-color: rgba(0, 78, 102, 0.8);
+    box-shadow: 2px 0.1px 1px rgba(0, 0, 0, 0.2);
+}
+.second-navlist a{
+    font-size: 14px;
 }
 
-.navlist > li > a:hover{
-    color: skyblue;
-}
+
+
+
+
+
+
 
 a > button{
     color: white;
     padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
+    background-color: rgba(255, 95, 46, 1);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -42,7 +100,7 @@ a > button{
 }
 
 a > button:hover{
-    background-color: rgba(0, 136, 169, 0.8);
+    background-color: rgba(255, 95, 46, 0.8);
 }
 
 .content{
@@ -59,5 +117,5 @@ a > button:hover{
     background-color: brown;
 }
 .footer{
-    background-color: crimson;
+    background-color: #6699CC;
 }
