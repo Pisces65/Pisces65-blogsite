@@ -1,0 +1,25 @@
+.footer{
+    background-color: #004e66;
+    height: auto;
+}
+.footer p, .footer h1{
+    text-align: center;
+}
+.footer h1{
+    margin: 10px 0;
+    color: #e1eef6;
+    font-size: 23px;
+    font-family: 方正准雅宋;
+    letter-spacing: 0.5px;
+}
+.footer p{
+    font-family: Capitolium2_Italic;
+    color: #ff5f2e;
+    margin: 10px 0;
+}
+.footer-bottom p{
+    font-family: notosanshans;
+    font-size: 13px;
+    color: rgb(182, 182, 182);
+    margin: 20px 0;
+}

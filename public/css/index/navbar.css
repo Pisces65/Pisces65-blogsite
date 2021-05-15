@@ -123,12 +123,13 @@
     padding: 0px;
 }
 .search img{
-    transform: translateY(-0.8px) translateX(0.5px);
+    transform: translateY(-0.9px) translateX(0.7px);
     position: absolute;
     right: 0;
 }
 .search input{
     position: absolute;
+    font-family: notosanshans;
     background-color: white;
     top: 0;
     left: 0;
