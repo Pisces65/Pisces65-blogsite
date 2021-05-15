@@ -1,0 +1,37 @@
+.blog2{
+    background-color: rgba(131, 182, 201, 0.9);
+    display: flex;
+    flex-direction: column;
+}
+.blog2 p.zh-title::before{
+    content: "《";
+    font-size: 1em;
+    color: #ff5f2e;
+}
+.blog2 p.zh-title::after{
+    content: "》";
+    font-size: 1em;
+    color: #ff5f2e;
+}
+.blog2 div{
+    align-self: flex-start;
+    margin: 10px 0;
+}
+.blog2 img{
+    width: 177px;
+    height: auto;
+    float: right;
+    margin: 0 0 0 10px;
+}
+.blog2 p.zh-body{
+    margin: 0;
+}
+.blog2 p.zh-body::after{
+    content: "...";
+    font-size: 1em;
+    color: #ff5f2e;
+}
+.blog2 p.jp{
+    margin-top: 0px;
+    font-size: 13px;
+}

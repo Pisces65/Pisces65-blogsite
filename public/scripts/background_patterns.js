@@ -22,7 +22,7 @@ function createSquare(){
 
     setTimeout(()=>{
         square.remove()
-    },5000)
+    },3000)
 }
 
 setInterval(createSquare, 150);

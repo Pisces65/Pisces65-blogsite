@@ -1,0 +1,19 @@
+.daily-emotion{
+    background-color: rgba(39, 76, 94, 0.9);
+}
+.daily-emotion p.zh-title::after{
+    content: ":";
+    font-size: 1em;
+    color: #ff5f2e;
+}
+.daily-emotion p.zh-body::after, .daily-emotion p.zh-body::before{
+    content: "\"";
+    font-size: 2em;
+    color: #ff5f2e;
+}
+.daily-emotion p.jp{
+    font-size: 13px;
+    text-align: right;
+    text-decoration:underline;
+    text-decoration-style: dotted;
+}
