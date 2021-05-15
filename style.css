@@ -2,24 +2,47 @@
     font-family:notosanshans;
     src:url("public/fonts/SourceHanSansCN-VF.ttf");
 }
+@font-face {
+    font-family:方正准雅宋;
+    src:url("public/fonts/FZZHUNYSJW.TTF");
+}
+@font-face {
+    font-family:Capitolium2_Italic;
+    src:url("public/fonts/Capitolium2_Italic.OTF");
+}
+
 body{
     margin: 0px;
     padding: 0px;
+    width: 100%;
     display: grid;
     grid-template-rows: 1fr minmax(600px,10fr) 1fr;
     font-family: notosanshans;
 }
+input[type=search]::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
 .nav{
     height: 15vh;
     min-height: 65px;
+    max-height: 90px;
     background-color: #004e66;
     display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
+.nav .intro{
+    display: grid;
+    grid-template-columns: 9vw auto;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+}
 
-.nav > img{
+.portrait{
+    grid-row: 1/3;
+    justify-self: center;
     height: 9vh;
     min-height: 39px;
     width: auto;
@@ -27,14 +50,21 @@ body{
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
-
-li > img{
-    opacity: 0;
-    width: 25px;
-    height: auto;
-    transform:translateY(-10px);
-    transition: all 0.3s ease 0s
+.intro h1{
+    margin: 0px;
+    align-self: end;
+    color: #e1eef6;
+    font-size: 23px;
+    font-family: 方正准雅宋;
+    letter-spacing: 0.5px;
 }
+.intro span{
+    margin-top: 5px;
+    align-self:start;
+    font-family: Capitolium2_Italic;
+    color: #ff5f2e;
+}
+
 
 .navlist{
     list-style: none;
@@ -43,7 +73,7 @@ li > img{
     padding: 0;
 }
 .navlist a{
-    color: white;
+    color: #e1eef6;
     transition: all 0.3s ease 0s;
     text-decoration: none;
     line-height: 35px;
@@ -72,6 +102,28 @@ li > img{
     display: none;
     flex-direction: column;
 }
+
+a.second-navlist-menu{
+    position: relative;
+}
+a.second-navlist-menu::after{
+    content: '';
+    background: url('public/svgs/keyboard_arrow_down_white_24dp.svg');
+    background-size:24px 24px;
+    position: absolute;
+    width:24px;
+    height:24px;
+    top: 6px;
+    left: 33px;
+    opacity: 0;
+    transform:translateY(-10px);
+    transition: all 0.3s ease 0s
+}
+.navlist > li:hover > a.second-navlist-menu::after {
+    opacity: 1;
+    transform:translateY(0);
+}
+
 .second-navlist > li{
     padding: 0 5px;
     margin: 1px 0;
@@ -84,29 +136,59 @@ li > img{
 
 
 
-
-
-
-
-
-a > button{
-    color: white;
-    padding: 9px 25px;
-    background-color: rgba(255, 95, 46, 1);
-    border: none;
-    border-radius: 50px;
+.search{
+    display: inline-flex;
+    position: relative;
+    transition: all 1s;
+    width: 30px;
+    height: 30px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 0px;
+}
+.search img{
+    transform: translateY(-0.8px) translateX(0.5px);
+    position: absolute;
+    right: 0;
+}
+.search input{
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 23.5px;
+    line-height: 35px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 13px;
+    border-radius: 20px;
+    padding: 0 20px 0 10px;
+}
+.search:hover{
+    width: 150px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+}
+.search:hover input{
+    display: block;
 }
 
-a > button:hover{
-    background-color: rgba(255, 95, 46, 0.8);
-}
+
+
+
+
+
+
+
+
 
 .content{
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: 1fr minmax(550px, 10fr) 1fr;
+    grid-template-columns: 1fr minmax(500px, 10fr) 1fr;
     grid-auto-rows: minmax(200px, auto);
     margin: 0 10px;
     padding: 10px 20px;
