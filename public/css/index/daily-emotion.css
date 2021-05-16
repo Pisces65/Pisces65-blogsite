@@ -8,7 +8,7 @@
 }
 .daily-emotion p.zh-body::after, .daily-emotion p.zh-body::before{
     content: "\"";
-    font-size: 2em;
+    font-size: 1.5em;
     color: #ff5f2e;
 }
 .daily-emotion p.zh-body{
