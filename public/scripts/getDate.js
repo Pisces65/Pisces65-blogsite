@@ -45,18 +45,17 @@ today_string = today_string.join('.');
 
 $(document).ready(function(){
     let date =$("div.time div:first-child p");
-    let weekday =$("div.time div:last-child p");
+    let weekday =$("div.time div:nth-child(2) p");
     date.text(today_string);
     weekday.text(today[3]);
     let anime_items = [];
+    let animeCalendar = $('.anime-calendar');
     $.getJSON("public/bangumi-data/04.json", (bangumidata)=>{
-        let animeCalendar = $('.anime-calendar');
         //find
         bangumidata.forEach(item => {
             anime_date = UTCtoCN(item.begin);
             if(anime_date[3] == today[3]){
                 item.daytime = anime_date[4]+":"+anime_date[5];
-                // let singleAnime = $("<div class='anime-item'><div><p class='jp'>"+anime_date[4]+":"+anime_date[5]+"</p></div><div><a href='"+item.officialSite+"' target='_blank'><p class='jp'>"+item.title+"</p></a></div></div>");
                 anime_items.push(item);
             };
         });
@@ -71,11 +70,32 @@ $(document).ready(function(){
               return 1;
             }
             return 0;
-          });
-          anime_items.forEach(item => {
-            let singleAnime = $("<div class='anime-item'><div><p class='jp'>"+item.daytime+"</p></div><div><a href='"+item.officialSite+"' target='_blank'><p class='jp'>"+item.title+"</p></a></div></div>");
-            animeCalendar.append(singleAnime);
         });
+        anime_items.forEach(item => {
+        let singleAnime = $("<div class='anime-item'><div><p class='jp'>"+item.daytime+"</p></div><div><a href='"+item.officialSite+"' target='_blank'><p class='jp'>"+item.title+"</p></a></div></div>");
+        animeCalendar.append(singleAnime);
+        });
+    });
+    
+    $(".anime-svg").click(function(){
+        console.log("clicked");
+        $('#anime-svg').toggleClass('img-down img-up');
+        if($('#anime-svg').hasClass('img-down')){
+            console.log("arrow dowm")
+            $(".anime-item").remove();
+            anime_items.forEach(item => {
+                let singleAnime = $("<div class='anime-item'><div><p class='jp'>"+item.daytime+"</p></div><div><a href='"+item.officialSite+"' target='_blank'><p class='jp'>"+item.title+"</p></a></div></div>");
+                animeCalendar.append(singleAnime);
+            });
+        }
+        if($('#anime-svg').hasClass('img-up')){
+            console.log("arrow up")
+            $(".anime-item").remove();
+            for(let i = anime_items.length-1;i >=0;i--){
+                let singleAnime = $("<div class='anime-item'><div><p class='jp'>"+anime_items[i].daytime+"</p></div><div><a href='"+anime_items[i].officialSite+"' target='_blank'><p class='jp'>"+anime_items[i].title+"</p></a></div></div>");
+                animeCalendar.append(singleAnime);
+            }
+        }
     })
     
 });
