@@ -66,11 +66,14 @@
     display: inline-flex;
     padding: 0 15px;
 }
-.navlist > li:hover > ul {
+.navlist > li:hover ul.second-navlist {
     display: flex;
+    opacity: 1;
 }
 
 .second-navlist{
+    opacity: 0;
+    transition: all 0.3s ease;
     list-style: none;
     position: absolute;
     margin-top: 35px;
