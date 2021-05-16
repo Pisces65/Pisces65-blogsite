@@ -16,13 +16,13 @@
 }
 
 
-body{
+body, html{
     margin: 0px;
     padding: 0px;
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-rows: auto minmax(600px,10fr) 1fr;
+    grid-template-rows: auto auto 1fr;
     font-family: notosanshans;
 }
 input[type=search]::-webkit-search-cancel-button{
@@ -32,7 +32,7 @@ p, h1, span{
     cursor: default;
 }
 a{
-    pointer-events: none;
+    /* pointer-events: none; */
     text-decoration: none;
 }
 p.jp, span.jp{
@@ -49,15 +49,57 @@ p.zh-normal, span.zh-normal{
 .content{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1fr minmax(500px, 10fr) minmax(169px ,3fr);
-    grid-auto-rows: minmax(200px, auto);
+    grid-template-columns: 35px minmax(500px, 10fr) minmax(169px ,3fr);
     margin: 10px 10px;
     justify-content: left;
 }
-.leftbar,.rightbar{
+.leftbar{
+    /* background-color: crimson; */
+}
+
+#scroll-to-top{
+    display: inline-flex;
+    flex-direction: column;
+    position: fixed;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    transform: translateY(-100px);
+    transition: all 300ms ease-in-out;
+}
+#scroll-to-top.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+#scroll-to-top svg{
+    height: 26px;
+    width: 26px;
 }
 
 
+#share{
+    display: inline-flex;
+    flex-direction: column;
+    position: fixed;
+    opacity: 1;
+    left: 0px;
+    top: 10px;
+    z-index: 1;
+    transform: translateY(-100px);
+    transition: all 300ms ease-in-out;
+}
+#share.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+#share svg{
+    height: 26px;
+    width: 26px;
+}
+#share > div{
+    margin: 7px 0;
+}
 
 
 
