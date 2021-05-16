@@ -57,51 +57,6 @@ p.zh-normal, span.zh-normal{
 .leftbar,.rightbar{
 }
 
-.anime-calendar{
-    display: flex;
-    flex-direction: column;
-
-}
-.anime-calendar p{
-    font-size: 12px;
-    color: white;
-    margin: 0;
-    padding: 1px 10px;
-}
-.anime-calendar > div{
-    margin: 2.5px 0;
-    display: inline-flex;
-}
-div.anime-title{
-    margin-top: 0;
-    margin-bottom: 2.5px;
-    background-color: #ff7473;
-    cursor: default;
-    box-shadow:  2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-.anime-calendar > div > div{
-    align-self: center;
-    width: auto;
-    background-color: rgba(163, 161, 161, 0.8);
-    box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease 0s;
-}
-.anime-calendar > div > div:first-child{
-    cursor:default;
-    margin-right: 5px;
-}
-.anime-calendar .anime-item:nth-child(3n) > div:hover{
-    background-color: rgba(229, 58, 64, 0.8);
-}
-.anime-calendar .anime-item:nth-child(3n-1) > div:hover , .anime-calendar .anime-item:nth-child(3n-2) > div:hover{
-    background-color: rgba(48, 169, 222, 0.8);
-}
-.anime-calendar > div > div:last-child{
-    position: relative;
-    flex-shrink: 1;
-}
-.anime-calendar > div > div:last-child p{
-}
 
 
 
