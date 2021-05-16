@@ -53,61 +53,8 @@ p.zh-normal, span.zh-normal{
     margin: 10px 10px;
     justify-content: left;
 }
-.leftbar{
-    /* background-color: crimson; */
-}
-
-#scroll-to-top{
-    display: inline-flex;
-    flex-direction: column;
-    position: fixed;
-    opacity: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    transform: translateY(-100px);
-    transition: all 300ms ease-in-out;
-    filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, 0.2));
-}
-#scroll-to-top.active{
-    transform: translateY(0);
-    opacity: 1;
-}
-#scroll-to-top svg{
-    height: 26px;
-    width: 26px;
-}
 
 
-#share{
-    display: inline-flex;
-    flex-direction: column;
-    position: fixed;
-    opacity: 1;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    transform: translateY(0);
-    transition: all 300ms ease-in-out;
-}
-#share.active{
-    transform: translateY(100px);
-    opacity: 0;
-}
-#share svg{
-    height: 26px;
-    width: 26px;
-}
-#share > div{
-    margin: 7px 0;
-    filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, 0.2));
-}
-#share > div:first-child{
-    margin: 0 0 7px 0;
-}
-#share > div:last-child{
-    margin: 7px 0 0 0;
-}
 
 
 
