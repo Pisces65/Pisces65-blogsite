@@ -77,15 +77,7 @@
                 </div>
                 <!-- <div>
                     <div><p class="jp">00:00</p></div>
-                    <div><p class="jp">灼热卡巴迪</p></div>
-                </div>
-                <div>
-                    <div><p class="jp">00:30</p></div>
-                    <div><p class="jp">巴克亚罗</p></div>
-                </div>
-                <div>
-                    <div><p class="jp">03:00</p></div>
-                    <div><p class="jp">纯白之音圣诞卡计划开发计划卡</p></div>
+                    <div><a href="#" target="_blank"><p class="jp">灼热卡巴迪</p></a></div>
                 </div> -->
             </div>
         </div>
@@ -173,7 +165,7 @@
                 bangumidata.forEach(item => {
                     anime_date = getAnimeHourMinuteWeekday(item.begin);
                     if(anime_date[2] == weekday){
-                        let singleAnime = $("<div><div><p class='jp'>"+anime_date[0]+":"+anime_date[1]+"</p></div><div><p class='jp'>"+item.title+"</p></div></div>");
+                        let singleAnime = $("<div class='anime-item'><div><p class='jp'>"+anime_date[0]+":"+anime_date[1]+"</p></div><div><a href='"+item.officialSite+"' target='_blank'><p class='jp'>"+item.title+"</p></a></div></div>");
                         animeCalendar.append(singleAnime);
                     }
                 });
