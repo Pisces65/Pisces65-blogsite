@@ -49,7 +49,7 @@ p.zh-normal, span.zh-normal{
 .content{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 35px minmax(500px, 10fr) minmax(169px ,3fr);
+    grid-template-columns: 35px minmax(500px, 10fr) minmax(193.917px ,3fr);
     margin: 10px 10px;
     justify-content: left;
 }

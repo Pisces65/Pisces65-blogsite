@@ -48,7 +48,6 @@ const getTitleTranslate = (object)=>{
     }
     return translated_title
 }
-
 const getBangumiData = (reversed, isJP, today)=>{
     let today_string = today.slice(0,3);
     today_string = today_string.join('.');
@@ -167,7 +166,6 @@ $(document).ready(function(){
             // reversed = true;
         }
     })
-
     $("#anime-toggle-name").click(function(){
         $("#anime-toggle-name").toggleClass("active");
         isJP = !isJP;
@@ -215,7 +213,6 @@ $(document).ready(function(){
             }
         }
     })
-
     $("#anime-yesterday").click(function(){
         current_zone = current_zone - ONEDAY;
         today = UTCtoCN(Date.now(),current_zone);
