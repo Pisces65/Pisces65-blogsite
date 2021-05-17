@@ -96,3 +96,7 @@ p.zh-normal, span.zh-normal{
     text-decoration:underline;
     text-decoration-style: dotted;
 }
+
+.bilivideo{
+    background-color: rgba(1, 22, 39, 0.8);
+}
