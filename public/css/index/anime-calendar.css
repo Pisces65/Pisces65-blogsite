@@ -2,16 +2,21 @@
     display: flex;
     flex-direction: column;
 }
-.anime-calendar p{
+.anime-calendar p.jp{
     white-space: nowrap;
     font-size: 12.5px;
     color: white;
     margin: 0;
 }
+.anime-calendar p.zh{
+    white-space: nowrap;
+    font-size: 12.5px;
+    color: white;
+    margin: 0px;
+}
 
 
 .anime-calendar > div{
-    margin: 2.5px 0;
     display: inline-flex;
 }
 
@@ -19,7 +24,7 @@
 .anime-calendar > div > div{
     align-self: center;
     width: auto;
-    padding: 2px 6px 1.4px 6px;
+    padding: 1.4px 6px;
     background-color: rgba(163, 161, 161, 0.8);
     box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease 0s;
@@ -36,6 +41,10 @@
     font-size: 15px;
 }
 
+.time{
+    flex-wrap: wrap;
+    margin-bottom: 2.5px;
+}
 
 .time div:first-child{
     margin-right: 5px;
@@ -45,6 +54,7 @@
 }
 .time > div{
     margin-right: 5px;
+    margin-top: 5px;
 }
 .anime-svg{
     display: flex;
@@ -63,7 +73,24 @@
     transition: all 300ms ease;
     transform: rotate(-180deg);
 }
+#anime-toggle-name{
+    transition: all 300ms ease;
+}
+#anime-toggle-name.active{
+    transform: rotate(180deg);
+}
 
+
+
+.anime-item{
+    margin: 2.5px 0;
+}
+.anime-item:first-child{
+    margin: 0 0 2.5px 0;
+}
+.anime-item:last-child{
+    margin: 2.5px 0 0 0;
+}
 
 .anime-item > div:first-child{
     cursor:default;
