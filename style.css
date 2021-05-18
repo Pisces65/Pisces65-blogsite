@@ -14,6 +14,10 @@
     font-family: sawarabi-gothic;
     src:url("public/fonts/sawarabi-gothic-medium.ttf");
 }
+@font-face {
+  font-family: JNRfont;
+  src:url("public/fonts/JNRfont_n.ttf");
+}
 
 
 body, html{
@@ -34,6 +38,7 @@ p, h1, span{
 a{
     /* pointer-events: none; */
     text-decoration: none;
+    color: black;
 }
 p.jp, span.jp{
     font-family: sawarabi-gothic;
@@ -100,3 +105,145 @@ p.zh-normal, span.zh-normal{
 .bilivideo{
     background-color: rgba(1, 22, 39, 0.8);
 }
+
+
+
+
+
+
+
+.audio-player{
+  margin: 75px 0 10px 0;
+}
+
+.music-container {
+  background-color: #ffc952;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  padding: 5px 10px;
+  position: relative;
+  z-index: 10;
+}
+
+.img-container {
+  flex: 1;
+  position: relative;
+  filter: drop-shadow( 0px 0px 3px rgba(0, 0, 0, 0.2))
+}
+
+.img-container::after {
+  content: '';
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  width: 20px;
+  height: 20px;
+  transform: translate(17.6px, 24px);
+}
+
+.img-container img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 55px;
+  width: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: rotate 6s linear infinite;
+
+  animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: flex;
+  flex: 2;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+.navigation > div{
+  cursor: pointer;
+}
+.navigation svg{
+  width: 25px;
+  height: auto;
+}
+.navigation div.big-btn svg{
+  width: 40px;
+}
+
+
+.music-info {
+  background-color: whitesmoke;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 0 10px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: -10;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.music-info p {
+  color: black;
+  font-family: JNRfonto;
+  font-size: 18px;
+  margin: 0;
+}
+
+.progress-container {
+  background: #dfdbdf;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #ff5f2e;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.music-time{
+  display: flex;
+  justify-content: flex-end;
+  font-family: sawarabi-gothic;
+  font-size: 3px;
+  color: #7a7a7a;
+}
+
+
+
+
+

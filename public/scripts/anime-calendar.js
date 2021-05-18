@@ -60,7 +60,7 @@ const getBangumiData = (reversed, isJP, today)=>{
     let anime_items = [];
     $(".anime-item").remove();
     let animeCalendar = $('.anime-calendar');
-    $.getJSON("public/bangumi-data/04.json", (bangumidata)=>{
+    $.getJSON("public/data/04.json", (bangumidata)=>{
         //find
         bangumidata.forEach(item => {
             let anime_date = UTCtoCN(item.begin,8);
