@@ -36,6 +36,7 @@
     background-color: #ff7473;
     cursor: default;
     box-shadow:  2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
 }
 .anime-title p{
     font-size: 15px;
