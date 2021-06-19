@@ -1,0 +1,34 @@
+.main-content{
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+}
+.main-content > div{
+    margin: 5px 0;
+    padding: 0 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.main-content > div:first-child{
+    margin: 0 0 5px 0;
+}
+.main-content > div:last-child{
+    margin: 5px 0 0 0;
+}
+.main-content p{
+    padding: 0;
+    margin: 10px 0;
+    color: white;
+}
+.main-content p.zh-title{
+    font-size: 20px;
+}
+.main-content p.zh-body{
+    text-indent:2em;
+    font-size: 15px;
+}
+.main-content p.jp{
+    font-size: 13px;
+    text-align: right;
+    text-decoration:underline;
+    text-decoration-style: dotted;
+}

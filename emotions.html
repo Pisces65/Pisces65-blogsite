@@ -7,15 +7,17 @@
 
     <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="public/css/index/navbar.css">
-    <link rel="stylesheet" href="public/css/index/background.css">
 
-    <link rel="stylesheet" href="public/css/index/anime-calendar.css">
+    <link rel="stylesheet" href="public/css/navbar.css">
+    <link rel="stylesheet" href="public/css/background.css">
+
+    <link rel="stylesheet" href="public/css/anime-calendar.css">
 
 
-    <link rel="stylesheet" href="public/css/index/footer.css">
-    <link rel="stylesheet" href="public/css/index/leftbar.css">
-    <link rel="stylesheet" href="public/css/index/audio-player.css">
+    <link rel="stylesheet" href="public/css/footer.css">
+    <link rel="stylesheet" href="public/css/leftbar.css">
+    <link rel="stylesheet" href="public/css/audio-player.css">
+    <link rel="stylesheet" href="public/css/emotions/emotion-card.css">
     <link rel="stylesheet" href="public/css/style.css">
 
     <title>Pisces65 | 碎碎念</title>
@@ -79,16 +81,18 @@
     </div>
     <div class="content">
         <div class="leftbar"></div>
-        <div class="main-content">
-            <div class="card">
-                <div class="img-container">
-                    <img src="public/images/IMG_4193(20210210-035126).JPG" alt="img">
-                </div>
-            </div>
-                
-            
 
-        
+
+        <div class="main-content">
+            <!-- <div class="card">
+                <div class="img-box">
+                    <img src="public/images/maimai.jpg" alt="img">
+                </div>
+                <div class="card-content">
+                    <p class="jp">2021.5.16</p>
+                    <p class="zh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut harum minima, eius quisquam fugiat, quis reiciendis, nihil necessitatibus autem atque doloremque natus dolorum! Fuga repudiandae ex earum quisquam nesciunt id!</p>
+                </div>
+            </div> -->
         </div>
         <div class="rightbar">
             <div class="audio-player">
@@ -171,5 +175,31 @@
     <script src="public/scripts/leftbar.js"></script>
     <script src="public/scripts/share.js"></script>
     <script src="public/scripts/audio-player.js"></script>
+    <script>
+        let emotionList = [];
+        const colors = [
+            'rgba(253, 87, 87, 0.8)',
+            'rgba(46, 196, 182, 0.8)',
+            'rgba(1, 22, 39, 0.8)',
+        ]
+        let i = 0;
+        $.getJSON('public/data/emotions.json', (emotions)=>{
+            emotionList = emotions;
+        }).then(()=>{
+            $(document).ready(()=>{
+                console.log("appending")
+                const main_content = $(".main-content");
+                emotionList.forEach(emotion => {
+                    let date = emotion.date;
+                    let imgURL = emotion.img;
+                    let content = emotion.content;
+                    const bg = colors[i%3];
+                    let singleEmotion = $("<div class='card' style='background-color:"+bg+"'><div class='img-box'><img src='"+imgURL+"' alt='img'></div><div class='card-content'><p class='jp'>"+date+"</p><p class='zh'>"+content+"</p></div></div>")
+                    main_content.append(singleEmotion);
+                    i++;
+                });
+            })
+        })
+    </script>
 </body>
 </html>

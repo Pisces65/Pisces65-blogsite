@@ -30,7 +30,7 @@ const UTCtoCN = (dateString,timezone)=>{
     let cn = new Date(calctime);
     let weekday = cn.toDateString().split(' ')[0];
     weekday = toJPWeekday(weekday)
-    let [year,month,day,hour,minute] = [cn.getFullYear().toString(), cn.getMonth().toString(), cn.getDate().toString(),cn.getHours().toString(),cn.getMinutes().toString()];
+    let [year,month,day,hour,minute] = [cn.getFullYear().toString(), (cn.getMonth()+1).toString(), cn.getDate().toString(),cn.getHours().toString(),cn.getMinutes().toString()];
     if(hour.length == 1){
         hour = "0"+hour;
     }

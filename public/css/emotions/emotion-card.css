@@ -1,61 +1,3 @@
-@font-face {
-    font-family:notosanshans;
-    src:url("../fonts/SourceHanSansCN-VF.ttf");
-}
-@font-face {
-    font-family:方正准雅宋;
-    src:url("../fonts/FZZHUNYSJW.TTF");
-}
-@font-face {
-    font-family:Capitolium2_Italic;
-    src:url("../fonts/Capitolium2_Italic.OTF");
-}
-@font-face {
-    font-family: sawarabi-gothic;
-    src:url("../fonts/sawarabi-gothic-medium.ttf");
-}
-@font-face {
-  font-family: JNRfont;
-  src:url("../fonts/JNRfont_n.ttf");
-}
-body, html{
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-rows: auto auto 1fr;
-    font-family: notosanshans;
-}
-input[type=search]::-webkit-search-cancel-button{
-    -webkit-appearance: none;
-}
-p, h1, span{
-    cursor: default;
-}
-a{
-    /* pointer-events: none; */
-    text-decoration: none;
-    color: black;
-}
-p.jp, span.jp{
-    font-family: sawarabi-gothic;
-}
-p.zh-title, span.zh-title{
-    font-family: 方正准雅宋;
-}
-p.zh-normal, span.zh-normal{
-    font-family: notosanshans;
-}
-.content{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 35px minmax(500px, 10fr) minmax(193.917px ,3fr);
-    margin: 10px 10px;
-    justify-content: left;
-    min-height: 70vh;
-}
-
 .main-content{
     position: relative;
     display: flex;
@@ -114,7 +56,7 @@ p.zh-normal, span.zh-normal{
     transition-delay: 0.3s;
 }
 .card p.jp{
-    font-size: 10px;
+    font-size: 7px;
     margin: 0px;
 }
 .card p.zh{

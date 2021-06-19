@@ -7,17 +7,18 @@
 
     <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="public/css/index/navbar.css">
-    <link rel="stylesheet" href="public/css/index/background.css">
+    <link rel="stylesheet" href="public/css/navbar.css">
+    <link rel="stylesheet" href="public/css/background.css">
     <link rel="stylesheet" href="public/css/index/daily-emotion.css">
-    <link rel="stylesheet" href="public/css/index/anime-calendar.css">
+    <link rel="stylesheet" href="public/css/anime-calendar.css">
     <link rel="stylesheet" href="public/css/index/blog1.css">
     <link rel="stylesheet" href="public/css/index/blog2.css">
-    <link rel="stylesheet" href="public/css/index/footer.css">
-    <link rel="stylesheet" href="public/css/index/leftbar.css">
-    <link rel="stylesheet" href="public/css/index/audio-player.css">
+    <link rel="stylesheet" href="public/css/footer.css">
+    <link rel="stylesheet" href="public/css/leftbar.css">
+    <link rel="stylesheet" href="public/css/audio-player.css">
     <link rel="stylesheet" href="public/css/index/bilivideo.css">
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/index/main-content.css">
+    <link rel="stylesheet" href="public/css/index/index.css">
 
     <title>Pisces65 | 主页</title>
 </head>
@@ -83,8 +84,8 @@
         <div class="main-content">
             <div class="daily-emotion">
                 <p class="zh-title">今日碎碎念</p>
-                <p class="zh-body">今天去看了张艺谋的《悬崖之上》，这个谍战片对于特务的刻画可以说是非常狡猾的了，拷问那端真的在电影院看效果太震撼了，忍不住想捂住眼睛。</p>
-                <p class="jp">21.5.15 土曜日</p>
+                <!-- <p class="zh-body">今天去看了张艺谋的《悬崖之上》，这个谍战片对于特务的刻画可以说是非常狡猾的了，拷问那端真的在电影院看效果太震撼了，忍不住想捂住眼睛。</p>
+                <p class="jp">21.5.15 土曜日</p> -->
             </div>
             <div class="blog1">
                 <p class="zh-title">关于抽卡Gatcha游戏又沉船这件事</p>
@@ -201,5 +202,31 @@
     <script src="public/scripts/leftbar.js"></script>
     <script src="public/scripts/share.js"></script>
     <script src="public/scripts/audio-player.js"></script>
+    <script>
+        let emotionList = [];
+        let blogList = [];
+        $.getJSON('public/data/emotions.json', (emotions)=>{
+            emotionList = emotions;
+            emotionList.sort(function(a,b) {
+                var dateA = a.date;
+                var dateB = b.date;
+                if (dateA < dateB) {
+                    return 1;
+                }
+                if (dateA > dateB) {
+                    return -1;
+                }
+                return 0;
+            });
+        }).then(()=>{
+            $(document).ready(()=>{
+                const daily_emotion = $(".daily-emotion");
+                let date = emotionList[0].date;
+                let content = emotionList[0].content;
+                let singleEmotion = $("<p class='zh-body'>"+content+"</p><p class='jp'>"+date+"</p>")
+                daily_emotion.append(singleEmotion);
+            })
+        })
+    </script>
 </body>
 </html>
